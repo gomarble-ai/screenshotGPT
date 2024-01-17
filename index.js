@@ -4,7 +4,7 @@ const https = require("https");
 const {scrapeLogic} = require("./scrapeLogic");
 const app = express();
 
-const PORT = process.env.PORT || 443;
+const PORT = process.env.PORT || 4430;
 
 https
   .createServer({

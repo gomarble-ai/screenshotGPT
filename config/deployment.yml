@@ -23,7 +23,7 @@ spec:
       - name: screenshot-gpt
         image: <IMAGE>
         ports:
-        - containerPort: 443
+        - containerPort: 4430
         resources:
           requests:
             cpu: 100m
@@ -40,6 +40,6 @@ spec:
     - name: https
       protocol: TCP
       port: 443
-      targetPort: 443
+      targetPort: 4430
   selector:
     app: screenshot-gpt
