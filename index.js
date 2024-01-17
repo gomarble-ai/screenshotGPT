@@ -1,13 +1,20 @@
 const express = require("express");
+const fs = require("fs");
+const https = require("https");
 const {scrapeLogic} = require("./scrapeLogic");
 const app = express();
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 443;
 
-app.listen(PORT,()=>{
+https
+  .createServer({
+    key: fs.readFileSync(__dirname+"/client-key.pem"),
+    cert: fs.readFileSync(__dirname+"/client-cert.pem"),
+  },
+    app)
+  .listen(PORT, ()=>{
     console.log(`Listening on Port ${PORT}`);
-
-});
+  });
 
 app.get("/", (req,res) => {
     res.send("Render Puppeteer server is up and running");

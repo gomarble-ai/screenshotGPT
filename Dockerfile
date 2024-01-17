@@ -9,6 +9,6 @@ RUN npm ci
 
 COPY . .
 
-EXPOSE 4000
+EXPOSE 443
 
 CMD [ "node" , "index.js" ]
