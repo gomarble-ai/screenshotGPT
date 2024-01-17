@@ -45,7 +45,7 @@ const scrapeLogic = async (res) => {
         // Scroll to the bottom of the page
         await autoScroll(page);
         
-        await page.screenshot({path: 'full.png', fullPage: true});
+        await page.screenshot({path: 'screenshots/full.png', fullPage: true});
 
         res.send("scraping done");
 
