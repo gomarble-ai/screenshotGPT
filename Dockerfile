@@ -9,8 +9,4 @@ RUN npm ci
 
 COPY . .
 
-RUN mkdir screenshots
-
-RUN chmod 777 screenshots
-
 CMD [ "node" , "index.js" ]
