@@ -45,9 +45,15 @@ const scrapeLogic = async (res) => {
         // Scroll to the bottom of the page
         await autoScroll(page);
         
-        await page.screenshot({path: 'screenshots-full.png', fullPage: true});
-
-        res.send("scraping done");
+        const imageBuffer  = await page.screenshot({fullPage: true, type: 'png',});
+        const img = Buffer.from(imageBuffer, 'base64');
+        
+        
+        res.writeHead(200, {
+            'Content-Type': 'image/png',
+            'Content-Length': img.length
+          });
+          res.end(img); 
 
     } catch (e){
         console.error(e);
