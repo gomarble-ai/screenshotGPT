@@ -14,5 +14,5 @@ app.get("/", (req,res) => {
 });
 
 app.get("/scrape", (req,res) =>{
-    scrapeLogic(res);
+    scrapeLogic(req.query.domain,res);
 })
