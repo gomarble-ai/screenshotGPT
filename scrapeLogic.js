@@ -16,7 +16,7 @@ const scrapeLogic = async (res) => {
 
     try {
         const page = await browser.newPage();
-        await page.emulate(puppeteer.devices['iPhone 6']);
+        //await page.emulate(puppeteer.devices['iPhone 6']);
         await page.goto(
             'https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ALL&q=%22myobvi.com%22&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=relevancy_monthly_grouped&search_type=keyword_exact_phrase&media_type=all',
             { waitUntil: 'networkidle0' , timeout:0 }
